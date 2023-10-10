@@ -9,11 +9,10 @@ enum direction{
 
 class InvalidStepException
 {
+    std::string message;
 public:
     InvalidStepException(std::string message): message{std::move(message)}{}
     std::string getMessage() const {return message;}
-private:
-    std::string message;
 };
 
 template <typename T>
@@ -24,7 +23,6 @@ struct Node{
 
 template<typename T>
 class DoublyLinkedCircularList{
-private:
     int size;
     Node<T> *head, *rear;
 public:
